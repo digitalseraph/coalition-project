@@ -21,13 +21,19 @@
                                             No.
                                         </th>
                                         <th>
-                                            Name
+                                            Product Name
                                         </th>
                                         <th>
-                                            Quantity
+                                            Quantity in Stock
                                         </th>
                                         <th>
-                                            Price
+                                            Price per Item
+                                        </th>
+                                        <th>
+                                            Datetime Submitted
+                                        </th>
+                                        <th>
+                                            Total value number
                                         </th>
                                         <th>
                                             Action
@@ -43,6 +49,12 @@
                                         </td>
                                         <td style="white-space: nowrap">
                                             {{ product.price }}
+                                        </td>
+                                        <td style="white-space: nowrap">
+                                            {{ product.created_at }}
+                                        </td>
+                                        <td style="white-space: nowrap">
+                                            ${{ product.quantity * product.price }}
                                         </td>
                                         <td style="white-space: nowrap">
                                             <button @click="initUpdate(index)" class="btn btn-success btn-xs">Edit</button>
