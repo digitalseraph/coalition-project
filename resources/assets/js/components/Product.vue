@@ -54,11 +54,20 @@
                                             {{ product.created_at }}
                                         </td>
                                         <td style="white-space: nowrap">
-                                            ${{ product.quantity * product.price }}
+                                            ${{ parseFloat(product.quantity) * parseFloat(product.price) }}
                                         </td>
                                         <td style="white-space: nowrap">
                                             <button @click="initUpdate(index)" class="btn btn-success btn-xs">Edit</button>
                                             <button @click="deleteProduct(index)" class="btn btn-danger btn-xs">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5">  </td>
+                                        <td style="white-space: nowrap" colspan="2">
+                                            {{ products | totalValueNumber }}
+                                        </td>
+                                        <td style="white-space: nowrap">
+                                            
                                         </td>
                                     </tr>
                                 </tbody>
@@ -179,6 +188,20 @@
             },
             paragraphWrap: function(value) {
                 return '<p>' + value + '</p>';
+            },
+            totalQuantity: function(list) {
+                var total = 0;
+                list.forEach(function(item) {
+                    total = parseInt(total) + parseInt(item.quantity);
+                });
+                return parseInt(total);
+            },
+            totalValueNumber: function(list) {
+                var total = 0;
+                list.forEach(function(item) {
+                    total = parseFloat(total) + parseFloat(item.quantity) * parseFloat(item.price);
+                });
+                return parseFloat(total);
             }
         },
         mounted()
