@@ -1,15 +1,51 @@
 let mix = require('laravel-mix');
 
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
- |
- */
+require('dotenv').config();
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+mix
+
+    /**********************************
+     * Scripts
+     */
+    .js('resources/assets/js/app.js', 'public/assets/js')
+    .scripts([
+        'public/assets/js/app.js'
+    ], 'public/assets/js/all.js')
+
+
+    /**********************************
+     * Extract large libraries
+     */
+    .extract([
+        'vue',
+        'lodash',
+        'jquery',
+        'axios'
+    ])
+
+
+    /**********************************
+     * Styles
+     */
+    .sass('resources/assets/sass/app.scss', 'public/assets/css')
+    .styles([
+        'public/assets/css/app.css'
+    ], 'public/assets/css/all.css')
+
+
+    /**********************************
+     * Miscellaneous Configurations
+     */
+    .sourceMaps()
+    .browserSync({
+        files: [
+            'public/assets/css/*.css',
+            'public/assets/js/**/*.js',
+            'resources/**/*.scss',
+            'resources/views/**/*.blade.php',
+            'resources/views/**/*.php',
+            'app/**/*.php',
+        ],
+        proxy: process.env.APP_URL
+    })
+    .version();

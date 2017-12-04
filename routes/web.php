@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/products', 'ProductController@indexPage')->name('pages.products');
+Route::resource('/product', 'ProductController');

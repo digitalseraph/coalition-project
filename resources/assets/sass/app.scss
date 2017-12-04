@@ -1,9 +1,77 @@
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+// @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic");
+
+// FontAwesome
+@import "~font-awesome/css/font-awesome.css";
 
 // Variables
-@import "variables";
+// @import "variables";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+// @import "~bootstrap-sass/assets/stylesheets/bootstrap/theme";
+
+body {
+    margin-bottom: 70px;
+}
+
+/**
+ * Forms
+ */
+
+// Form Elements
+form {
+    label {
+        // Add asterisks to required labels on forms
+        &.required {
+            &:after{ 
+                content:'*'; 
+                color: $brand-danger; 
+                padding-left:5px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    &.delete-form {
+        display: inline;
+    }
+}
+
+.panel {
+    .panel-heading {
+        .panel-title {
+            padding: 0.5em 0.5em;
+            font-size: 1.6em;;
+            .btn.pull-right {
+            }
+        }
+    }
+}
+
+.product-item {
+    font-size: 16px;
+    .product-header {
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+            small {
+                font-size: 14px;
+                font-weight: normal;
+            }
+        }
+    }
+
+    .product-info {
+        .disabled {
+            cursor: pointer;
+        }
+    }
+
+    .product-body {
+
+    }
+}
