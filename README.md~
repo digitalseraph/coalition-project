@@ -14,7 +14,7 @@ Just a simple project demonstrating usage of simple Vue components with Laravel.
 1. Clone this repo: `git clone <repo-link>'
 2. Install PHP dependencies: `composer install`
 3. Install node dependencies: `yarn` or `npm install`
-4. Run migration: `php artisan migrate`
-5. Start the server: `php artisan serve --port=80`
-6. Open http://127.0.0.1/ in your web browser!
+4. Start the server: `php artisan serve --port=80`
+5. Start
+6. simply run `php artisan serve --port=8181` and browse to the site!
 7. you're done!
