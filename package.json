@@ -16,7 +16,7 @@
         "browser-sync-webpack-plugin": "2.2.2",
         "dotenv": "^4.0.0",
         "font-awesome": "^4.7.0",
-        "jquery": "^3.2",
+        "jquery": "^3.5",
         "laravel-mix": "^1.0",
         "lodash": "^4.17.4",
         "vue": "^2.5.7"
